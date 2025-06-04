@@ -7,5 +7,5 @@ class User:
     def is_eligible(self):
         return 18 <= self.age <= 65
     
-def __str__(self):
-    return f"Gender: {self.gender}, Age: {self.age}, Fitness Level: {self.fitness_level}"
+    def __str__(self):
+        return f"Gender: {self.gender}, Age: {self.age}, Fitness Level: {self.fitness_level}"

@@ -5,15 +5,6 @@ import random
 
 console = Console()
 
-def load_plan_from_file(path='data/workouts.json'):
-    if not os.path.exists(path):
-        return None 
-    try:
-        with open(path, 'r') as f:
-            return json.load(f)
-    except Exception:
-        return None
-
 def save_plan_to_file(plan, path="data/workouts.json"):
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
@@ -26,14 +17,14 @@ def save_plan_to_file(plan, path="data/workouts.json"):
 local_quotes = [
    "Believe in yourself and all that you are.",
    "No pain, no gain!",
-   "Don’t limit your challenges—challenge your limits."
+   "Don't limit your challenges—challenge your limits.",
    "Push harder than yesterday if you want a different tomorrow.",
    "Fall in love with taking care of yourself.",
    "Progress, not perfection.",
-   "Your body can stand almost anything. It’s your mind that you have to convince.",
-   "Discipline is doing it even when you don’t feel like it.",
+   "Your body can stand almost anything. It's your mind that you have to convince.",
+   "Discipline is doing it even when you don't feel like it.",
    "Make yourself proud.",
-   "The only bad workout is the one you didn’t do.",
+   "The only bad workout is the one you didn't do.",
 ]
 
 def fetch_motivation():

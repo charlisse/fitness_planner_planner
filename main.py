@@ -1,5 +1,5 @@
 from workout import WorkoutPlan
-from utils import fetch_motivation, save_plan_to_file, load_plan_from_file
+from utils import fetch_motivation, save_plan_to_file
 from rich.console import Console
 from user import User
 
