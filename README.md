@@ -7,5 +7,5 @@ This Python app generates a custom weekly workout plan based on user input: gend
 1. Clone this repo or download the files.
 2. Navigate into the folder:
    ```bash
-   git clone https://github.com/your-username/fitness_planner.git
+   git clone https://github.com/your-username/fitness_planner_planner.git
    cd fitness_planner_planner
