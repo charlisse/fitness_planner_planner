@@ -1,10 +1,18 @@
 import json
 import os
-import requests
 from rich.console import Console
 import random
 
 console = Console()
+
+def load_plan_from_file(path='data/workouts.json'):
+    if not os.path.exists(path):
+        return None 
+    try:
+        with open(path, 'r') as f:
+            return json.load(f)
+    except Exception:
+        return None
 
 def save_plan_to_file(plan, path="data/workouts.json"):
     try:

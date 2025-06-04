@@ -61,7 +61,6 @@ Type ```q``` at any prompt to exit the program early.
 
 This project uses the following third-party packages:
 - ```rich``` (MIT License): For styled terminal output. The MIT license allows free personal/commercial use with attribution.
-- ```requests``` (Apache 2.0 License): Used to simulate API requests (planned for quote fetching). Apache 2.0 is permissive and allows modification and distribution.
 
 Please ensure compliance with these open-source licenses when distributing or modifying the app.
 

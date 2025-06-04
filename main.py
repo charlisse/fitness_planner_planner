@@ -1,5 +1,5 @@
 from workout import WorkoutPlan
-from utils import fetch_motivation, save_plan_to_file
+from utils import fetch_motivation, save_plan_to_file, load_plan_from_file
 from rich.console import Console
 from user import User
 
@@ -23,6 +23,7 @@ def get_valid_input(prompt, validator, error_message='Invalid input.', exception
             console.print(f'[red]{ve} Please try again.[/red]')
 
 def main():
+
     try:
         console.print('[bold cyan]Welcome to the Personalised Training Program![/bold cyan]')
         console.print('[italic]Type "q" at any prompt to exit.[/italic]')
