@@ -2,6 +2,7 @@ import json
 import os
 import requests
 from rich.console import Console
+import random
 
 console = Console()
 
@@ -19,7 +20,8 @@ def fetch_motivation():
         response = requests.get("https://type.fit/api/quotes", timeout=5)
         if response.ok:
             quotes = response.json()
-            return quotes[0]["text"]
+            quote = random.choice(quotes)
+            return quotes.get('text', 'Stay motivated!')
         return "Keep pushing your limits!"
     except (requests.RequestException, ValueError):
         return "You're stronger than you think!"
