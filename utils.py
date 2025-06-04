@@ -15,13 +15,19 @@ def save_plan_to_file(plan, path="data/workouts.json"):
     except IOError as ioe:
         console.print(f"[red]I/O error when saving the plan: {ioe}[/red]")
 
+local_quotes = [
+   "Believe in yourself and all that you are.",
+   "No pain, no gain!",
+   "Don’t limit your challenges—challenge your limits."
+   "Push harder than yesterday if you want a different tomorrow.",
+   "Fall in love with taking care of yourself.",
+   "Progress, not perfection.",
+   "Your body can stand almost anything. It’s your mind that you have to convince.",
+   "Discipline is doing it even when you don’t feel like it.",
+   "Make yourself proud.",
+   "The only bad workout is the one you didn’t do."
+]
+
 def fetch_motivation():
-    try:
-        response = requests.get("https://type.fit/api/quotes", timeout=5)
-        if response.ok:
-            quotes = response.json()
-            quote = random.choice(quotes)
-            return quotes.get('text', 'Stay motivated!')
-        return "Keep pushing your limits!"
-    except (requests.RequestException, ValueError):
-        return "You're stronger than you think!"
+    return random.choice(local_quotes)
+
