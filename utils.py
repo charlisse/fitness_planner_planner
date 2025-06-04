@@ -25,7 +25,7 @@ local_quotes = [
    "Your body can stand almost anything. It’s your mind that you have to convince.",
    "Discipline is doing it even when you don’t feel like it.",
    "Make yourself proud.",
-   "The only bad workout is the one you didn’t do."
+   "The only bad workout is the one you didn’t do.",
 ]
 
 def fetch_motivation():

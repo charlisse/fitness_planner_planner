@@ -14,7 +14,7 @@ This Python app generates a custom weekly workout plan based on user input: gend
     python3 -m venv venv
     source venv/bin/activate # On Windows: venv\Scripts\activate
 
-3. Install dependenies 
+3. Install dependencies 
     ```bash
     pip install -r requirements.txt
 
@@ -30,3 +30,21 @@ You'll be prompted to enter your gender, age and fitness level. The app will the
 
 The app only accepts users aged between 18 and 65.
 Plans are automatically saved into a JSON file (data/workouts.json) after generation. 
+
+## Required Packages and Licensing
+
+This project uses:
+
+- `rich` (MIT License): Used for styled terminal output. The MIT license allows free personal/commercial use with attribution.
+- `requests` (Apache 2.0 License): Used to simulate API requests (planned for quote fetching). Apache 2.0 is permissive and allows modification and distribution.
+
+Ensure that any dependencies used comply with open-source license obligations when distributing or modifying the app.
+
+## Error Handling
+
+The app handles:
+- Invalid inputs (e.g. letters for age)
+- Out-of-range ages
+- File writing issues (e.g. missing folders)
+- Graceful exits via typing "q" at any prompt
+

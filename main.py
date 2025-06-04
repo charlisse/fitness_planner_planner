@@ -1,6 +1,7 @@
 from workout import WorkoutPlan
 from utils import fetch_motivation, save_plan_to_file
 from rich.console import Console
+from user import User
 
 console = Console()
 
@@ -32,7 +33,7 @@ def main():
         gender = gender_map.get(gender.lower(), gender.lower())
 
         age = get_valid_input('Enter your age: ',
-                             lambda a: a.isdigit() and 18 <= int(a) <= 65,
+                             lambda a: a.isdigit() and User("temp", int(a), "temp").is_eligible(),
                              "Sorry, this program is only for users between 18 and 65 years old.", 
                              exception_type=InvalidAgeError)
         age = int(age)
@@ -48,7 +49,8 @@ def main():
         console.print(f'Age: [yellow]{age}[/yellow]')
         console.print(f'Fitness Level: [yellow]{fitness}[/yellow]')
 
-        workout = WorkoutPlan(gender, age, fitness)
+        user = User(gender, age, fitness)
+        workout = WorkoutPlan(user.gender, user.age, user.fitness_level)
         plan = workout.generate()
 
         console.print('\n[bold green]Your Weekly Workout Plan:[/bold green]')
