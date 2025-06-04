@@ -35,9 +35,7 @@ class WorkoutPlan:
             }
         }
 
-        try:
-            return plans[self.level]
-        except KeyError:
-            return {"Error": "Unsupported fitness level. Please try again."}
-
+        if self.level not in plans:
+            raise ValueError(f"Unsupported fitness level: {self.level}. Please try again.")
+        return plans[self.level]
 

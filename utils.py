@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 from rich.console import Console
 
@@ -6,11 +7,10 @@ console = Console()
 
 def save_plan_to_file(plan, path="data/workouts.json"):
     try:
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w") as f:
             json.dump(plan, f, indent=2)
-        console.print(f"[green]Workout plan saved to {path}[/green]")
-    except FileNotFoundError:
-        console.print("[red]Error: File Path does not exist.[/red]")
+        console.print(f"[green]Workout plan saved to {os.path.abspath(path)}[/green]")
     except IOError as ioe:
         console.print(f"[red]I/O error when saving the plan: {ioe}[/red]")
 
@@ -23,4 +23,3 @@ def fetch_motivation():
         return "Keep pushing your limits!"
     except (requests.RequestException, ValueError):
         return "You're stronger than you think!"
-    

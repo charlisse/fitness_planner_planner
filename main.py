@@ -12,6 +12,9 @@ def get_valid_input(prompt, validator, error_message='Invalid input.', exception
     while True:
         try:
             value = input(prompt).strip()
+            if value.lower() == 'q':
+                console.print('[bold red]Exiting program. Goodbye![/bold red]')
+                exit()
             if not validator(value):
                 raise exception_type(error_message)
             return value
@@ -21,18 +24,24 @@ def get_valid_input(prompt, validator, error_message='Invalid input.', exception
 def main():
     try:
         console.print('[bold cyan]Welcome to the Personalised Training Program![/bold cyan]')
+        console.print('[italic]Type "q" at any prompt to exit.[/italic]')
 
         gender = get_valid_input('Enter your gender (male/female/other): ',
                             lambda g: g.lower() in ['male', 'female', 'other'])
-    
+
         age = get_valid_input('Enter your age: ',
                              lambda a: a.isdigit() and 18 <= int(a) <= 65,
-                             "Sorry this program is only for users between 18 and 65 years old.", 
+                             "Sorry, this program is only for users between 18 and 65 years old.", 
                              exception_type=InvalidAgeError)
         age = int(age)
 
         fitness = get_valid_input('Enter fitness level (beginner/intermediate/advanced): ',
                               lambda f: f.lower() in ['beginner', 'intermediate', 'advanced'])
+
+        console.print('\n[bold green]Summary of Your Choices:[/bold green]')
+        console.print(f'Gender: [yellow]{gender}[/yellow]')
+        console.print(f'Age: [yellow]{age}[/yellow]')
+        console.print(f'Fitness Level: [yellow]{fitness}[/yellow]')
 
         workout = WorkoutPlan(gender, age, fitness)
         plan = workout.generate()
@@ -44,12 +53,13 @@ def main():
         save_plan_to_file(plan)
 
         quote = fetch_motivation()
-        console.print(f'\n[italic magenta]Motivation of the day:[italic magenta] {quote}')
+        console.print(f'\n[italic magenta]Motivation of the day:[/italic magenta] {quote}')
 
-    except ValueError:
-        console.print('[red]Invalid input. Please enter numeric values for age.[/red]')
+    except (ValueError, InvalidAgeError) as e:
+        console.print(f'[red]{e}[/red]')
     except Exception as e:
-        console.print(f'[red]An unexpected error occurred:[red/] {e}')
-    
+        console.print(f'[red]An unexpected error occurred:[/red] {e}')
+
 if __name__ == "__main__":
     main()
+
