@@ -57,10 +57,22 @@ The app will then:
 
 Type ```q``` at any prompt to exit the program early.
 
-## Requirements and Licensing 
+## Licensing and Ethical Impacts
 
 This project uses the following third-party packages:
 - ```rich``` (MIT License): For styled terminal output. The MIT license allows free personal/commercial use with attribution.
+
+Freedom to Use and Modify:
+- The MIT License allows anyone to use, modify, and distribute the software freely — promoting open collaboration and learning.
+
+Ethical Attribution:
+- Users are required to keep the original copyright and license notice, encouraging respectful acknowledgment of the original authors.
+
+Supports Open Source Culture:
+- Encourages ethical software development by fostering transparency, sharing, and innovation without legal or financial barriers.
+
+Use at Your Own Risk:
+- The license disclaims warranties, which means developers must ethically test and validate any software they build using ```rich```.
 
 Please ensure compliance with these open-source licenses when distributing or modifying the app.
 
