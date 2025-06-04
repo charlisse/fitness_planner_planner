@@ -74,6 +74,6 @@ The app gracefully handles:
 - Program exit on typing ```q``` at any prompt
 
 ## Contact / Support 
-    For questions or feedback, please contact 16332@coderacademy.edu.au
-    Thank you for using the Personalised Training Program App! Keep pushing your limits!
+For questions or feedback, please contact 16332@coderacademy.edu.au
+Thank you for using the Personalised Training Program App! Keep pushing your limits!
 
