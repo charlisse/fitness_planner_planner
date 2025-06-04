@@ -27,7 +27,9 @@ def main():
         console.print('[italic]Type "q" at any prompt to exit.[/italic]')
 
         gender = get_valid_input('Enter your gender (male/female/other): ',
-                            lambda g: g.lower() in ['male', 'female', 'other'])
+                            lambda g: g.lower() in ['m', 'male', 'f', 'female', 'o', 'other'])
+        gender_map = {'m': 'male', 'f': 'female', 'o': 'other'}
+        gender = gender_map.get(gender.lower(), gender.lower())
 
         age = get_valid_input('Enter your age: ',
                              lambda a: a.isdigit() and 18 <= int(a) <= 65,
@@ -36,7 +38,10 @@ def main():
         age = int(age)
 
         fitness = get_valid_input('Enter fitness level (beginner/intermediate/advanced): ',
-                              lambda f: f.lower() in ['beginner', 'intermediate', 'advanced'])
+                            lambda f: f.lower() in ['b', 'beginner', 'i', 'intermediate', 'a', 'advanced'])
+        fitness_map = {'b': 'beginner', 'i': 'intermediate', 'a': 'advanced'}
+        fitness = fitness_map.get(fitness.lower(), fitness.lower())
+
 
         console.print('\n[bold green]Summary of Your Choices:[/bold green]')
         console.print(f'Gender: [yellow]{gender}[/yellow]')
