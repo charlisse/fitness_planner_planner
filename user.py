@@ -1,3 +1,5 @@
+# no external or third party imports used in this file 
+
 class User:
     """
     Represents a user of the fitness program.

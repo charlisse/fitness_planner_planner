@@ -1,3 +1,5 @@
+# no external or third party imports used in this file 
+
 class WorkoutPlan:
     """
     Generates a weekly workout plan based on the user's fitness level. 
