@@ -1,7 +1,7 @@
-from workout import WorkoutPlan
-from utils import fetch_motivation, save_plan_to_file
-from rich.console import Console
-from user import User
+from workout import WorkoutPlan # Local module to generate workout plans based on fitness level
+from utils import fetch_motivation, save_plan_to_file # Local utility function for random motivation and file saving
+from rich.console import Console # External package rich for styled terminal output 
+from user import User # Local class for storing and validating user information 
 
 console = Console()
 
