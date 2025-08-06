@@ -1,7 +1,7 @@
-import json
-import os
-from rich.console import Console
-import random
+import json # Python standard library - used to write workout plan to a .json file 
+import os # Python standard library - used to create folders if they don't exist 
+from rich.console import Console # External package rich for styled terminal output 
+import random # Python standard library - used to randomly select a motivation quote 
 
 console = Console()
 
