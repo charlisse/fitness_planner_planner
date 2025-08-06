@@ -6,10 +6,22 @@ from user import User
 console = Console()
 
 class InvalidAgeError(Exception):
-    """Raised when age is not between 18 and 65."""
+    """Customer exception raised when age is not between 18 and 65."""
     pass
 
 def get_valid_input(prompt, validator, error_message='Invalid input.', exception_type=ValueError):
+    """
+    Prompts user for input and validates it using validater function.
+    
+    Parameters:
+        prompt (str): The message displayed to the user.
+        validator (function): A function that returns True if the input is valid 
+        error_message (str): the error message shown for invalid input.
+        exception_type (Exception): Type of exception to raise on validation failure.
+
+    Returns:
+        str: The validated user input.
+    """
     while True:
         try:
             value = input(prompt).strip()
@@ -23,7 +35,14 @@ def get_valid_input(prompt, validator, error_message='Invalid input.', exception
             console.print(f'[red]{ve} Please try again.[/red]')
 
 def main():
-
+    """
+    Main function that runs the program:
+    - Collects user input (gender, age, fitness level)
+    - Validates input and creates User and WorkoutPlan objects
+    - Generates and displays a workout plan
+    - Saves the plan to a JSON file 
+    - Shows a motivation quote
+    """
     try:
         console.print('[bold cyan]Welcome to the Personalised Training Program![/bold cyan]')
         console.print('[italic]Type "q" at any prompt to exit.[/italic]')
