@@ -1,10 +1,36 @@
 class WorkoutPlan:
+    """
+    Generates a weekly workout plan based on the user's fitness level. 
+
+    Attributes:
+        gender (str): Users gender
+        age (int): users age
+        level (str): users fitness level
+    """
+
     def __init__(self, gender, age, level):
+        """
+        Initialises the WorkoutPlan with user attributes.
+
+        Parameters:
+            gender (str): The users gender
+            age (int): The users age
+            level (str): The users fitness level
+        """
         self.gender = gender.lower()
         self.age = age
         self.level = level.lower()
     
     def generate(self):
+        """
+        Generates a dictionary of workouts for each day of the week based on the users fitness level. 
+
+        Returns:
+            dict: Workout plan with day-to-activity mapping
+
+        Raises:
+            ValueError: If the fitness level is not supported. 
+        """
         plans = {
             "beginner": {
                 "Monday": "Stretch + Brisk Walk",
