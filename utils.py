@@ -6,6 +6,17 @@ import random
 console = Console()
 
 def save_plan_to_file(plan, path="data/workouts.json"):
+    """
+    Saves the workout plan to a JSON file at the specified path. 
+
+    Parameters:
+        plan (dict): The generated workout plan. 
+        path (str): File path to save the workout plan. 
+
+    Returns:
+        None
+    """
+
     try:
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w") as f:
@@ -28,5 +39,11 @@ local_quotes = [
 ]
 
 def fetch_motivation():
+    """
+    Returns a random motivation quote from a predefined list. 
+
+    Returns:
+        str: A motivational quote
+    """
     return random.choice(local_quotes)
 
